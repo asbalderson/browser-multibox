@@ -1,6 +1,8 @@
 #!/bin/bash
 
-#set -x
+set -x
+
+KEY_DELAY=25
 
 WINDOWS=()
 
@@ -20,10 +22,24 @@ while [ true ] ; do
 	for window in ${WINDOWS[@]}
        	do
 		xdotool windowactivate $window
-		sleep 0.05
-		xdotool key --window $window $k
-	done
+		sleep 0.045
+		if [ $k == "k" ]
+		then
+			xdotool key --delay $KEY_DELAY --window $window Up
+		elif [ $k == "m" ]
+		then
+                        xdotool key --delay $KEY_DELAY --window $window Left
+                elif [ $k == "," ]
+                then
+                        xdotool key --delay $KEY_DELAY --window $window Down
+                elif [ $k == "." ]
+                then
+                        xdotool key --delay $KEY_DELAY --window $window Right
+		else
+			xdotool key --delay $KEY_DELAY --window $window $k
+		fi
 	xdotool windowactivate $THIS
+	done
 done
 
 

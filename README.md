@@ -1,4 +1,4 @@
-# Browswer-multibox
+# Browser-multibox
 
 ## Requirements
 
@@ -17,7 +17,6 @@ pass in keyboard commands to the window.
 ## TODO
 
 1. Add proper exit key
-1. Add support for arrow keys
 1. find optimal timing for sleep between window activiation and action send
 
 
